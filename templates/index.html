@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        .container {
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+        .msg_cotainer {
+            max-width: 60%;
+            padding: 10px;
+            border-radius: 25px;
+            background-color: #ececec;
+            margin-bottom: 10px;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            text-align: left;
+        }
+        .msg_cotainer_send {
+            max-width: 60%;
+            padding: 10px;
+            border-radius: 25px;
+            background-color: #d4f1f4;
+            margin-bottom: 10px;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            text-align: left;
+        }
+        .msg_time {
+            position: absolute;
+            bottom: -15px;
+            right: 10px;
+            font-size: 10px;
+            color: #888;
+        }
+        .msg_time_send {
+            position: absolute;
+            bottom: -15px;
+            right: 10px;
+            font-size: 10px;
+            color: #888;
+        }
+        .img_cont_msg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 30%;
+            overflow: hidden;
+            margin: 5px auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .user_img_msg {
+            width: 100%;
+            height: 100%;
+        }
+        #messageArea {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+        #text {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            font-size: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        #messageArea button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 20px;
+            background-color: #121e09;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #messageArea button:hover {
+            background-color: #365fcf;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Chatbot</h1>
+        <div id="chat-container">
+            <!-- Messages will be displayed here -->
+        </div>
+        <form id="messageArea">
+            <input type="text" id="text" name="user_message" placeholder="Type your message here" />
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#messageArea").on("submit", function(event) {
+                event.preventDefault(); // Prevent form from reloading the page
+
+                const date = new Date();
+                const hour = date.getHours();
+                const minute = date.getMinutes();
+                const str_time = hour + ":" + (minute < 10 ? '0' + minute : minute);
+                var rawText = $("#text").val();
+
+                if (rawText.trim() === "") return; // Prevent sending empty messages
+
+                var userHtml = '<div class="d-flex flex-column align-items-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/d5b84Xw/Untitled-design.png" class="rounded-circle user_img_msg"></div><div class="msg_cotainer_send">' + rawText + '<span class="msg_time_send">' + str_time + '</span></div></div>';
+
+                $("#text").val("");
+                $("#chat-container").append(userHtml);
+
+                $.ajax({
+                    data: JSON.stringify({ user_message: rawText }), // Send data as JSON
+                    contentType: 'application/json', // Set content type to JSON
+                    type: "POST",
+                    url: "/get_response",
+                }).done(function(data) {
+                    var botHtml = '<div class="d-flex flex-column align-items-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img_msg"></div><div class="msg_cotainer">' + data + '<span class="msg_time">' + str_time + '</span></div></div>';
+                    $("#chat-container").append(botHtml);
+                }).fail(function(jqXHR, textStatus, errorThrown) {
+                    console.error('Error:', textStatus, errorThrown);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

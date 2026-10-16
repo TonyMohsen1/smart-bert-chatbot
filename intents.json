@@ -1,0 +1,143 @@
+{
+  "intents": [
+      {
+          "tag": "greeting",
+          "patterns": ["Hi there", "How are you", "Is anyone there?", "Hey", "Hola", "Hello", "Good day"],
+          "responses": ["Hello", "Good to see you again", "Hi there, how can I help?"],
+          "context": [""]
+      },
+      {
+          "tag": "goodbye",
+          "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+          "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+          "context": [""]
+      },
+      {
+          "tag": "thanks",
+          "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+          "responses": ["My pleasure", "You're welcome"],
+          "context": [""]
+      },
+      {
+          "tag": "workout_query",
+          "patterns": ["Can you suggest a workout?", "What's a good exercise for losing weight?", "How can I build muscle?", "Recommend a workout routine"],
+          "responses": ["For losing weight, try a mix of cardio and strength training.", "To build muscle, focus on weightlifting with progressive overload.", "A balanced workout routine includes both cardio and strength exercises."],
+          "context": [""]
+      },
+      {
+          "tag": "nutrition_query",
+          "patterns": ["What should I eat to lose weight?", "Can you recommend a diet?", "What's a good post-workout meal?", "How can I gain weight healthily?"],
+          "responses": ["For losing weight, focus on a diet rich in lean proteins, vegetables, and whole grains.", "A good post-workout meal includes protein and carbohydrates, such as a protein shake and a banana.", "To gain weight healthily, incorporate nutrient-dense foods like nuts, avocados, and lean proteins into your diet."],
+          "context": [""]
+      },
+      {
+          "tag": "fitness_tips",
+          "patterns": ["Any fitness tips?", "How to stay motivated for fitness?", "What are the best fitness practices?", "Give me some fitness advice"],
+          "responses": ["Set realistic goals and track your progress.", "Mix up your workouts to stay motivated and avoid plateaus.", "Stay consistent and make fitness a part of your daily routine."],
+          "context": [""]
+      },
+      {
+          "tag": "yoga_query",
+          "patterns": ["What are the benefits of yoga?", "Can yoga help with flexibility?", "Recommend some yoga poses", "Is yoga good for mental health?"],
+          "responses": ["Yoga can improve flexibility, strength, and mental clarity.", "Poses like Downward Dog, Child's Pose, and Warrior are great for beginners.", "Yoga is excellent for reducing stress and improving mental health."],
+          "context": [""]
+      },
+      {
+          "tag": "injury_prevention",
+          "patterns": ["How to avoid injuries during exercise?", "What are some injury prevention tips?", "Can you suggest ways to prevent workout injuries?"],
+          "responses": ["Always warm up before exercising and cool down afterward.", "Use proper form and technique during exercises.", "Listen to your body and don't push through pain."],
+          "context": [""]
+      },
+      {
+          "tag": "supplements",
+          "patterns": ["What supplements should I take?", "Are protein shakes necessary?", "Can you recommend any supplements?", "What's the best supplement for muscle gain?"],
+          "responses": ["Protein shakes can be helpful for muscle recovery.", "Creatine is a popular supplement for muscle gain.", "Always consult with a healthcare provider before starting any new supplements."],
+          "context": [""]
+      },
+      {
+          "tag": "cardio_exercises",
+          "patterns": ["What are some good cardio exercises?", "Can you suggest a cardio workout?", "How often should I do cardio?", "Is running a good cardio exercise?"],
+          "responses": ["Running, cycling, and swimming are excellent cardio exercises.", "Aim for at least 150 minutes of moderate cardio per week.", "Mix different cardio exercises to keep it interesting."],
+          "context": [""]
+      },
+      {
+          "tag": "strength_training",
+          "patterns": ["How do I start strength training?", "Can you suggest a strength training routine?", "What's the best exercise for building strength?", "How many times a week should I do strength training?"],
+          "responses": ["Start with basic compound movements like squats, deadlifts, and bench presses.", "Aim for strength training 2-3 times per week.", "Gradually increase weights to continue building strength."],
+          "context": [""]
+      },
+      {
+          "tag": "recovery",
+          "patterns": ["How to recover after a workout?", "What are some good recovery techniques?", "Can you suggest ways to reduce muscle soreness?", "What's the best way to recover from a strenuous workout?"],
+          "responses": ["Ensure adequate rest and hydration.", "Incorporate stretching and foam rolling into your routine.", "Consider massage therapy and active recovery methods like light walking."],
+          "context": [""]
+      },
+      {
+          "tag": "gym_etiquette",
+          "patterns": ["What are the rules of gym etiquette?", "Can you tell me some gym manners?", "How should I behave at the gym?", "What should I avoid doing at the gym?"],
+          "responses": ["Always wipe down equipment after use.", "Don't hog machines or weights.", "Be mindful of others and share equipment.", "Re-rack weights after use."],
+          "context": [""]
+      },
+      {
+          "tag": "personal_training",
+          "patterns": ["Do I need a personal trainer?", "What are the benefits of hiring a personal trainer?", "Can you recommend a good personal trainer?", "How much does a personal trainer cost?"],
+          "responses": ["A personal trainer can provide personalized workout plans and motivation.", "Costs vary, but investing in a trainer can enhance your fitness journey.", "Look for certified trainers with good reviews and experience."],
+          "context": [""]
+      },
+      {
+          "tag": "fitness_gear",
+          "patterns": ["What gear do I need for the gym?", "Can you recommend some fitness equipment?", "What should I bring to the gym?", "Is it worth investing in home gym equipment?"],
+          "responses": ["Basic gym gear includes comfortable workout clothes, a water bottle, and a towel.", "Investing in quality shoes and equipment can improve your workouts.", "Home gym equipment like dumbbells and resistance bands can be very useful."],
+          "context": [""]
+      },
+      {
+          "tag": "mental_health",
+          "patterns": ["How does exercise affect mental health?", "Can working out help with stress?", "What are the mental benefits of fitness?", "Is exercise good for anxiety and depression?"],
+          "responses": ["Exercise can reduce stress and improve mood.", "Regular physical activity is linked to lower levels of anxiety and depression.", "Working out releases endorphins that boost mental well-being."],
+          "context": [""]
+      },
+      {
+          "tag": "motivation",
+          "patterns": ["How can I stay motivated to workout?", "What keeps you motivated?", "Any tips for maintaining workout motivation?", "How do I avoid fitness burnout?"],
+          "responses": ["Set achievable goals and celebrate small victories.", "Find a workout buddy or join a fitness community.", "Keep your workouts varied and fun to avoid burnout."],
+          "context": [""]
+      },
+      {
+          "tag": "fitness_apps",
+          "patterns": ["Can you recommend some fitness apps?", "What's the best app for tracking workouts?", "Are fitness apps useful?", "Any good apps for meal planning?"],
+          "responses": ["Apps like MyFitnessPal and Strava are great for tracking fitness progress.", "Nike Training Club offers a variety of workout routines.", "Fitness apps can provide structure and motivation for your fitness journey."],
+          "context": [""]
+      },
+      {
+          "tag": "exercise_legs",
+          "patterns": ["What are some good leg exercises?", "How can I strengthen my legs?", "Recommend a leg workout routine.", "What exercises target the thighs and calves?"],
+          "responses": ["Squats, lunges, and leg presses are excellent leg exercises.", "Deadlifts and calf raises can help strengthen your legs.", "Include a variety of leg exercises to target different muscle groups."],
+          "context": [""]
+      },
+      {
+          "tag": "exercise_arms",
+          "patterns": ["What are some good arm exercises?", "How can I build arm muscles?", "Recommend an arm workout routine.", "What exercises target the biceps and triceps?"],
+          "responses": ["Bicep curls, tricep dips, and push-ups are great for the arms.", "Incorporate exercises like chin-ups and hammer curls.", "Aim to work your arms 2-3 times per week for best results."],
+          "context": [""]
+      },
+      {
+          "tag": "exercise_back",
+          "patterns": ["What are some good back exercises?", "How can I strengthen my back?", "Recommend a back workout routine.", "What exercises target the upper and lower back?"],
+          "responses": ["Pull-ups, bent-over rows, and deadlifts are excellent for the back.", "Incorporate lat pulldowns and seated rows into your routine.", "Work on both the upper and lower back for balanced strength."],
+          "context": [""]
+      },
+      {
+          "tag": "exercise_chest",
+          "patterns": ["What are some good chest exercises?", "How can I build chest muscles?", "Recommend a chest workout routine.", "What exercises target the pectoral muscles?"],
+          "responses": ["Bench presses, push-ups, and chest flies are great for the chest.", "Incline and decline presses target different parts of the chest.", "Include a variety of chest exercises for balanced development."],
+          "context": [""]
+      },
+      {
+          "tag": "exercise_core",
+          "patterns": ["What are some good core exercises?", "How can I strengthen my core?", "Recommend a core workout routine.", "What exercises target the abs and obliques?"],
+          "responses": ["Planks, crunches, and Russian twists are excellent for the core.", "Include leg raises and mountain climbers in your routine.", "A strong core helps with overall stability and strength."],
+          "context": [""]
+      }
+  ]
+}
+
